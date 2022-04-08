@@ -2,11 +2,21 @@
 
 # Set your MSSQL access details here
 # and you won't be asked for them
-pubip="192.168.208.1"
+pubip=$PUBLIC_IP
 dbip=mssql
 dbac="sa"
-dbpass="__Alex772"
-dbport=1422
+dbpass=$DB_PASSWORD
+dbport=$DB_PORT
+configtype=$CONFIG_TYPE
+tg_wait=30
+tg_duration=60
+count1=1
+count2=1
+count3=1
+serverport=23
+server=24
+maxplayers=30
+loglvl=3
 
 echo -n "Removing old configuration... "
 rm -f /etc/init.d/GlobalDBAgent
@@ -30,22 +40,6 @@ echo "done."
 echo "Deleting old logfiles..."
 rm -f /var/log/cabal/*
 
-echo -e "\nConfigurations available :"
-echo " 1 - Mercury (1 chan. Normal)"
-echo " 2 - Venus  (1 chan. PK)"
-echo " 3 - Mars (1 chan. War)"
-echo " 4 - Jupiter (1 chan. Tierra Gloriosa)"
-echo " 5 - Saturn (2 chan. Normal/TG)"
-echo " 6 - Neptune (3 chan. Normal/War/Tierra Gloriosa)"
-echo " 7 - Pluto (3 chan. PK/War/Tierra Gloriosa)"
-echo " 8 - Leo (4 chan. Normal/PK/Prem War/Tierra Gloriosa)"
-echo " 9 - Sirius (4 chan. Normal/PK/War/Tierra Gloriosa)"
-echo "10 - Draco (5 chan. Normal/Prem/Prem PK/Prem War/TG)"
-echo "11 - Test Server (1 chan. PK)"
-echo "12 - Duality (2 server, 1 norm and 1 War channel)"
-echo "20 - Divinity (3 server, 1 norm and 1 PK channel each)"
-echo -ne "\nEnter a configuration [11] : "
-read configtype
 if [ -z $configtype ]; then
 configtype="1"
 fi
@@ -99,33 +93,9 @@ else
   channels=1
 fi
 
-if [ $tg_chan -eq 1 ]; then
-  echo -ne "Tierra Gloriosa lobby wait time (min) [30] : "
-  read tg_wait
-  if [ -z $tg_wait ]; then
-    tg_wait=30
-  fi
-
-  echo -ne "Tierra Gloriosa duration (min) [60] : "
-  read tg_duration
-  if [ -z $tg_duration ]; then
-    tg_duration=60
-  fi
-else
-  tg_wait=30
-  tg_duration=60
-fi
-
 echo -e "\nInitialising $cfgfile configuration..."
 cp -f /etc/cabal/templates/$cfgfile /etc/cabal/server_list
 
-count1=1
-count2=1
-count3=1
-serverport=23
-server=24
-maxplayers=10
-loglvl=3
 let playertotal=$maxplayers*$channels
 let tgw=$tg_wait*60
 let tgd=$tg_duration*60
@@ -280,14 +250,22 @@ chmod 0777 /usr/bin/GlobalMgrSvr
 chmod 0777 /usr/bin/CashDBAgent
 chmod 0777 /etc/odbc.ini
 
+let new_exp_rate=$EXP_RATE*100
+let new_sexp_rate=$SEXP_RATE*100
+let new_cexp_rate=$CEXP_RATE*100
+let new_drop_rate=$DROP_RATE*100
+let new_alz_rate=$ALZ_RATE*100
+let new_alzb_rate=$BALZ_RATE*100
+let new_pexp_rate=$PEXP_RATE*100
+
 sed /etc/cabal/templates/Const.cfg \
--e "s/u00/1000/g" \
--e "s/v00/1000/g" \
--e "s/w00/1000/g" \
--e "s/x00/1000/g" \
--e "s/y00/1000/g" \
--e "s/z00/1000/g" \
--e "s/abcd/2/g" \
+-e "s/u00/$new_exp_rate/g" \
+-e "s/v00/$new_sexp_rate/g" \
+-e "s/w00/$new_cexp_rate/g" \
+-e "s/x00/$new_drop_rate/g" \
+-e "s/y00/$new_alzb_rate/g" \
+-e "s/z00/$new_alz_rate/g" \
+-e "s/abcd/$ITEMS_PER_DROP/g" \
 > /etc/cabal/Data/Const.scp
 echo "Creating: Const.scp... "
 
@@ -300,9 +278,9 @@ for daemon in `cat /etc/cabal/server_list | grep -v ^#`; do
   echo -e "\nStarting $daemon..."
   if [ $name == "GlobalMgrSvr" ]; then
     /usr/bin/$daemon
-    sleep 10
+    sleep 5
   else
     /usr/bin/$daemon
-    sleep 2
+    sleep 1
   fi
 done

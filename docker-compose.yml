@@ -5,13 +5,13 @@ services:
     build: 
       context: ./db
     ports:
-      - 1422:1422
+      - $DB_PORT:$DB_PORT
     volumes:
       - ./db/data:/var/opt/mssql/data:rw
     environment:
       - SA_PASSWORD=${DB_PASSWORD}
       - ACCEPT_EULA=Y
-      - MSSQL_TCP_PORT=1422
+      - MSSQL_TCP_PORT=$DB_PORT
 
   server: 
     build: 
@@ -21,7 +21,24 @@ services:
     tty : true
     depends_on:
       - mssql
+    environment:
+      - PUBLIC_IP=${PUBLIC_IP}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - CONFIG_TYPE=${CONFIG_TYPE}
+      - EXP_RATE=$EXP_RATE
+      - SEXP_RATE=$SEXP_RATE
+      - CEXP_RATE=$CEXP_RATE
+      - DROP_RATE=$DROP_RATE
+      - ALZ_RATE=$ALZ_RATE
+      - BALZ_RATE=$BALZ_RATE
+      - PEXP_RATE=$PEXP_RATE
+      - ITEMS_PER_DROP=$ITEMS_PER_DROP
     ports:
       - 38101:38101
-      - 38111:38111
+      - 38190:38190
+      - 38170:38170
       - 38121:38121
+      - 38181:38181
+      - 38180:38180
+      - 38111-38120:38111-38120

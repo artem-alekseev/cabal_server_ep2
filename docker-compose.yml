@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  mssql: 
+    build: 
+      context: ./db
+    ports:
+      - 1422:1422
+    volumes:
+      - ./db/data:/var/opt/mssql/data:rw
+    environment:
+      - SA_PASSWORD=${DB_PASSWORD}
+      - ACCEPT_EULA=Y
+      - MSSQL_TCP_PORT=1422
+
+  server: 
+    build: 
+      context: ./server
+    volumes:
+      - ./server/logs:/var/log/cabal
+    tty : true
+    depends_on:
+      - mssql
+    ports:
+      - 38101:38101
+      - 38111:38111
+      - 38121:38121

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+	echo "usage: $0 number [options]"
+	exit
+fi
+
+current=`date +%s`
+date -d "`expr $current - $1` seconds ago" $2

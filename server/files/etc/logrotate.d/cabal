@@ -1,0 +1,11 @@
+# Logrotate file for cabal
+
+/var/log/cabal/*.log {
+    notifempty
+    missingok
+    size=100M
+    rotate 10
+    postrotate
+        /etc/init.d/`basename $1 | cut -f1 -d'.'` reload
+    endscript
+}

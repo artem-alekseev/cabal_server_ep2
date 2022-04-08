@@ -1,0 +1,45 @@
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirror.nsc.liu.se/centos-store/4.6/os/i386/
+gpgcheck=1
+gpgkey=http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-4
+protect=1
+priority=1
+
+#released updates 
+[update]
+name=CentOS-$releasever - Updates
+baseurl=http://mirror.nsc.liu.se/centos-store/4.6/updates/i386/
+gpgcheck=1
+gpgkey=http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-4
+protect=1
+priority=1
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirror.nsc.liu.se/centos-store/4.6/extras/i386/
+gpgcheck=1
+gpgkey=http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-4
+protect=1
+priority=1
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://mirror.nsc.liu.se/centos-store/4.6/centosplus/i386/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-4
+protect=1
+priority=2
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib
+baseurl=http://mirror.nsc.liu.se/centos-store/4.6/contrib/i386/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-4
+protect=1
+priority=2

@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Startup script for the Cabal Server
+#
+# chkconfig: 345 85 15
+# description: Cabal World Server
+# processname: WorldSvr
+
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+daemon=`basename $0`
+
+# See how we were called.
+case "$1" in
+  start)
+	DAEMON_COREFILE_LIMIT=unlimited
+        echo -n "Starting $daemon: "
+        daemon -1 --user cabal $daemon
+        echo
+        ;;
+  stop)
+        echo -n "Shutting down $daemon: "
+        killproc $daemon
+        echo
+        ;;
+  status)
+        status $daemon
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  reload)
+        echo -n "Reloading $daemon: "
+        killproc $daemon -HUP
+        echo
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+esac
+
+exit 0
+

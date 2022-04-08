@@ -1,0 +1,6 @@
+You obviously didn't read the readme. You configs will not appear
+until you have run the config script:
+
+/home/cabal/cabal_config.sh
+
+Read the documentation in /etc/cabal/docs.

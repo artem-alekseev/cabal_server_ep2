@@ -1,0 +1,18 @@
+
+
+[NpcPos]	Flags	Index	PosX	PosY	Type	IsRangeCheck
+0	0	1	208	223	6	1
+
+[WarpLst]	NpcsIdx	NSetIdx	TargetIdx	LV	Fee	Type
+1	13	0	261	140	0	0
+2	14	0	262	140	0	0
+3	15	0	262	140	0	0
+
+[SkillLst]	NSetIdx	NpcsIdx	SkillIdx	SkillLv
+
+[ShopLst]	NpcsIdx	NSetIdx	ItemKind	ItemOpt	ReputationClass	DurationIdx	Price
+1	50	28	8	30	2	0	150000
+2	50	29	12	20	2	0	16000
+3	50	35	5	50	3	0	250000
+4	50	36	8	50	3	0	250000
+5	50	37	12	30	3	0	24000

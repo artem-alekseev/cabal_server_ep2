@@ -1,0 +1,18 @@
+
+
+
+[Terrain]	TerrainX	TerrainY	WarpIdxForDead	WarpIdxForRetn	WarpIdxForLOut	DmgMin	DmgMax	WarControl
+0	0	0	240	240	240	0	0	0
+
+[CommDrop]	TerrainIdx	ItemKind	ItemOpt	DropRate	MinLv	MaxLv	Group	MaxDropCnt	OptPoolIdx	DurationIdx
+1	0	265	0	.00001149425275862	151	163	13	0	13	0
+2	0	266	0	.00001149425275862	151	163	13	0	13	0
+3	0	278	0	.00040000000000000	151	163	13	0	5	0
+4	0	279	0	.00040000000000000	151	163	13	0	5	0
+5	0	280	0	.00001149425275862	151	163	13	0	13	0
+6	0	281	0	.00001149425275862	151	163	13	0	13	0
+
+[MobsDrop]	TerrainIdx	SpeciesIdx	ItemKind	ItemOpt	DropRate	MinLv	MaxDropCnt	OptPoolIdx	DurationIdx
+1	0	837	1185	1313	.16000000000000000	1	0	0	0
+
+[MobsDropMission]	TerrainIdx	SpeciesIdx	ItemKind	ItemOpt	DropRate	MaxDropCnt

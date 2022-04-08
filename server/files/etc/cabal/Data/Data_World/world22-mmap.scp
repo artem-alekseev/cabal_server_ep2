@@ -1,0 +1,20 @@
+
+
+[MMap]	SpeciesIdx	PosX	PosY	Width	Height	SpwnInterval	SpawnDefault	EvtProperty	EvtMobs	EvtInterval	MissionGate	PerfectDrop	Type	Min	Max	Authority
+1	904	140	30	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+2	904	161	11	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+3	906	168	25	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+4	906	172	14	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+5	905	179	24	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+6	904	190	14	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+7	907	57	13	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+8	907	92	9	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+9	907	95	31	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+10	907	106	40	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+11	907	122	21	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+12	907	150	12	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+13	907	173	24	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+14	907	185	4	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+15	908	201	19	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+16	908	208	29	11	11	100000	1	<null>	<null>	<null>	0	1	0	0	0	0
+[MissionMMAP]	QDungeonIdx	MMapidx	Cells

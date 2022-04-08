@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# Startup script for the Cabal Server
+#
+# chkconfig: 345 85 15
+# description: Cabal World Server
+# processname: WorldSvr
+
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+daemons=`cat /etc/cabal/server_list | grep -v ^#`
+
+# See how we were called.
+case "$1" in
+  start)
+      if [[ -f /home/cabal/daemons/wancheck_daemon.sh && -f /etc/cron.d/cabalWANcheck ]]; then
+       /home/cabal/daemons/wancheck_daemon.sh
+      fi
+	DAEMON_COREFILE_LIMIT=unlimited
+	for daemon in $daemons
+	do
+	                t="${daemon#*_}"
+                                i="${t%%_*}"
+                                j="${t##*_}"
+                                if [ $j != "10" ]; then
+		  echo -n "Starting $daemon: "
+		  daemon -1 --user cabal $daemon
+		  echo
+		fi
+	done
+        ;;
+  stop)
+	for daemon in $daemons
+	do
+		echo -n "Shutting down $daemon: "
+		killproc $daemon
+		echo
+	done
+        ;;
+  status)
+	for daemon in $daemons
+	do
+		status $daemon
+	done
+        ;;
+  restart)
+      if [[ -f /home/cabal/daemons/wancheck_daemon.sh && -f /etc/cron.d/cabalWANcheck ]]; then
+       /home/cabal/daemons/wancheck_daemon.sh
+      fi
+        $0 stop
+        $0 start
+        ;;
+  reload)
+	for daemon in $daemons
+	do
+		echo -n "Reloading $daemon: "
+		killproc $daemon -HUP
+		echo
+	done
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+esac
+
+exit 0
+

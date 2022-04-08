@@ -1,0 +1,6 @@
+
+
+[MMap]	SpeciesIdx	PosX	PosY	Width	Height	SpwnInterval	SpawnDefault	EvtProperty	EvtMobs	EvtInterval	MissionGate	PerfectDrop	Type	Min	Max	Authority
+
+
+[MissionMMAP]	QDungeonIdx	MMapidx	Cells

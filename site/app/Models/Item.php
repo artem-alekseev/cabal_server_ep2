@@ -9,6 +9,7 @@ use function Psy\bin;
 class Item implements Stringable
 {
     public string $id;
+    public string $lvl;
     public string $bound;
     public string $postbound_bytes;
     public string $first_craft_slot;
@@ -27,7 +28,8 @@ class Item implements Stringable
 
     public function __construct(string $item)
     {
-        $this->id = substr($item, 0, 4);
+        $this->id = substr($item, 0, 2) . '0'. substr($item, 3, 1);
+        $this->lvl = substr($item, 2, 1);
         $this->bound = substr($item, 4, 2);
         $this->postbound_bytes = substr($item, 6, 6);
         $this->first_craft_slot = substr($item, 12, 1);
@@ -48,7 +50,7 @@ class Item implements Stringable
     public function __toString(): string
     {
         return implode('', [
-            $this->id,
+            $this->structuredId(),
             $this->bound,
             $this->postbound_bytes,
             $this->first_craft_slot,
@@ -64,9 +66,9 @@ class Item implements Stringable
         ]);
     }
 
-    public function getDecId(): int
+    public function structuredId()
     {
-        return unpack('vid', hex2bin($this->id))['id'];
+        return substr($this->id, 0 , 2) . $this->lvl . substr($this->id, 3 , 1);
     }
 
     public function getOptions(): string
@@ -81,5 +83,12 @@ class Item implements Stringable
             $this->count_slots,
             $this->four_craft_option,
         ]);
+    }
+
+    public function update($request)
+    {
+        foreach ($request as $key => $value) {
+            $this->$key = $value;
+        }
     }
 }

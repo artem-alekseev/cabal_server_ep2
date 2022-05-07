@@ -25,7 +25,7 @@ CONFIG_TYPE=1
 
 #### CONFIG_TYPE
 ```
-1 - Mercury (1 chan. Normal)
+1 - Mercury (1 chan. Premium)
 2 - Venus  (1 chan. PK)
 3 - Mars (1 chan. War)
 4 - Jupiter (1 chan. Tierra Gloriosa)

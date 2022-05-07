@@ -27,7 +27,7 @@ class Inventory extends Model
             get: function ($value) {
                 $data = bin2hex($value);
 
-                $items = collect(str_split($data, 32));
+                $items = collect($data ? str_split($data, 32) : []);
 
                 $items = $items->mapWithKeys(function ($item, $key) {
                     $item = new Item($item);
@@ -39,7 +39,7 @@ class Inventory extends Model
             },
             set: function ($items) {
                 $items = implode('', $items->toArray());
-
+                // dd($items);
                 return DB::raw("CONVERT(VARBINARY(MAX), '0x$items', 1)"); 
             },
         );

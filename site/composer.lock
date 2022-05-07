@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7009b324e5c471b97e9589c61f79d007",
+    "content-hash": "f6c04a40be3d3957e2f5c99fb733b6c8",
     "packages": [
+        {
+            "name": "artem-alekseev/dictionaries",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artem-alekseev/dictionaries.git",
+                "reference": "0731626e3a468b02b16301d332973cbb4c7c0898"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artem-alekseev/dictionaries/zipball/0731626e3a468b02b16301d332973cbb4c7c0898",
+                "reference": "0731626e3a468b02b16301d332973cbb4c7c0898",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dictionaries\\Providers\\DictionaryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dictionaries\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Alekseev",
+                    "email": "lexx73652@gmail.com"
+                }
+            ],
+            "description": "Use dictionary in laravel",
+            "support": {
+                "issues": "https://github.com/artem-alekseev/dictionaries/issues",
+                "source": "https://github.com/artem-alekseev/dictionaries/tree/v1.0.6"
+            },
+            "time": "2021-11-26T14:13:13+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.1.1",
@@ -7937,5 +7984,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

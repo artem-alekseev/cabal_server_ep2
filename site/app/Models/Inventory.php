@@ -39,8 +39,8 @@ class Inventory extends Model
             },
             set: function ($items) {
                 $items = implode('', $items->toArray());
-                // dd($items);
-                return DB::raw("CONVERT(VARBINARY(MAX), '0x$items', 1)"); 
+
+                return DB::raw("CONVERT(VARBINARY(MAX), '0x$items', 1)");
             },
         );
     }

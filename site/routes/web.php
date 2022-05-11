@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CharacterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +13,13 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
-Route::get('/character/{character}/inventory/{item}/edit', [HomeController::class, 'editItem'])->middleware(['auth'])->name('item.edit');
-Route::post('/character/{character}/inventory/{item}/save', [HomeController::class, 'saveItem'])->middleware(['auth'])->name('item.save');
-
 Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
+    Route::get('/character/{character}', [CharacterController::class, 'index'])->name('character.index');
+    Route::get('/character/{character}/inventory/{position}/edit', [CharacterController::class, 'editItem'])->name('item.edit');
+    Route::post('/character/{character}/inventory/{position}/save', [CharacterController::class, 'saveItem'])->name('item.save');
+});
+
+

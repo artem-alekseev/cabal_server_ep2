@@ -26,8 +26,19 @@ class Item implements Stringable
     public int $dec_id;
     public int $dec_position;
 
+    public bool $exist = true;
+    public string $hex;
+
     public function __construct(string $item)
     {
+        if (strlen($item) < 32) {
+            $this->exist = false;
+            $position = pack('V', $item);
+
+            $item = '00000000000000000000' . bin2hex($position) . '0000';
+        }
+
+        $this->hex = $item;
         $this->id = substr($item, 0, 2) . '0'. substr($item, 3, 1);
         $this->lvl = substr($item, 2, 1);
         $this->bound = substr($item, 4, 2);

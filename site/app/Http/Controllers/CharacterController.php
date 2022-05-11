@@ -13,7 +13,13 @@ class CharacterController extends Controller
     {
         $character->load('inventory');
 
-        return view('character.index', compact('character'));
+        $closedClots = [];
+
+        foreach ($character->inventory->Data as $item) {
+            $closedClots = array_merge($closedClots, $item->closed_positions);
+        }
+
+        return view('character.index', compact('character', 'closedClots'));
     }
 
     public function editItem(Character $character, $position)

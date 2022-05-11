@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Dictionaries\ItemSlotsDictionary;
 use Stringable;
-
-use function Psy\bin;
 
 class Item implements Stringable
 {
@@ -25,6 +24,8 @@ class Item implements Stringable
 
     public int $dec_id;
     public int $dec_position;
+
+    public array $closed_positions = [];
 
     public bool $exist = true;
     public string $hex;
@@ -56,6 +57,47 @@ class Item implements Stringable
 
         $this->dec_id = unpack('vid', hex2bin($this->id))['id'];
         $this->dec_position = unpack('Vpos', hex2bin($this->position))['pos'];
+
+        $this->closed_positions = $this->getClosedPositions($this->dec_position);
+    }
+//INSERT INTO cabalcash.dbo.MyCashItem( UserNum, TranNo, ServerIdx, ItemKindIdx, ItemOpt, DurationIdx )
+//VALUES (@UserNum, '1', @serveridx,@itemidx,@itemopt,@durationidx )
+    public function getClosedPositions($position)
+    {
+        $closedPositions = ItemSlotsDictionary::getValueData($this->dec_id);
+        $positions = [];
+
+        if (is_array($closedPositions)) {
+            if ($closedPositions['pos'] == "V") {
+                if ($closedPositions['slots'] == 8) {
+                    $positions[] = $position + 1;
+
+                    $positions[] = $position + 8;
+                    $positions[] = $position + 9;
+
+                    $positions[] = $position + 16;
+                    $positions[] = $position + 17;
+
+                    $positions[] = $position + 24;
+                    $positions[] = $position + 25;
+                }
+            }
+            if ($closedPositions['pos'] == "Q") {
+                if ($closedPositions['slots'] == 4) {
+                    $positions[] = $position + 1;
+
+                    $positions[] = $position + 8;
+                    $positions[] = $position + 9;
+                }
+            }
+            if ($closedPositions['pos'] == "H") {
+                if ($closedPositions['slots'] == 2) {
+                    $positions[] = $position + 1;
+                }
+            }
+        }
+
+        return $positions;
     }
 
     public function __toString(): string

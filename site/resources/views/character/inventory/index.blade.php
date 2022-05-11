@@ -14,13 +14,20 @@
             <td class="fw-bold">Line {{ ($i + $page) - ($page - 1) * 8 }} </td>
             @for($j = ($page - 1) * 8; $j < $page * 8 ;$j++)
                 <td>
-                    @php $slot = $i * 8 + $j; $item = $character->inventory->Data->firstWhere('dec_position', '=', $slot); @endphp
-                    SLOT #{{ $slot }}<br>
-                    Item : {{ $item ? $item->dec_id : '-' }}<br>
-                    <a href="{{ route('item.edit', [$character, $slot]) }}"
-                       class="btn btn-success">
-                        Edit
-                    </a>
+                    @php
+                        $slot = $i * 8 + $j;
+                        $item = $character->inventory->Data->firstWhere('dec_position', '=', $slot);
+                        $isClosed = array_search($slot, $closedClots) === false ? false : true;
+                    @endphp
+                    @if (!$isClosed)
+                        Item : {{ $item ? $item->dec_id : '-' }}<br>
+                        <a href="{{ route('item.edit', [$character, $slot]) }}"
+                           class="btn btn-success">
+                            Edit
+                        </a>
+                    @else
+                        <i class="bi bi-arrow-left-square-fill"></i>
+                    @endif
                 </td>
             @endfor
         </tr>

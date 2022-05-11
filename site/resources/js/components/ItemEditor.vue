@@ -121,7 +121,9 @@ export default {
     },
     methods: {
         dec2Hex(dec) {
-            return dec.toString(16).padEnd(4, '0')
+            let hex = dec.toString(16).padStart(4, '0');
+            hex = hex[2] + hex[3] + hex[0] + hex[1];
+            return hex;
         }
     }
 }

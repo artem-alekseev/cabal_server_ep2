@@ -47,6 +47,6 @@ class CharacterController extends Controller
 
         $character->inventory->save();
 
-        return redirect('/');
+        return redirect()->route('character.index', $character);
     }
 }

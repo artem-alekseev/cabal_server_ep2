@@ -45,12 +45,12 @@
 
 
         <div class="mb-3" v-if="itemData.count_slots > 1">
-            <label for="thrid_craft_option" class="form-label">3 Craft Option</label>
-            <v-select :options="craftOptions" v-model="itemData.thrid_craft_option"
+            <label for="third_craft_option" class="form-label">3 Craft Option</label>
+            <v-select :options="craftOptions" v-model="itemData.third_craft_option"
                       :reduce="option => option.code"></v-select>
-            <input id="thrid_craft_slot" name="thrid_craft_slot" type="hidden" class="form-control" value="1">
-            <input id="thrid_craft_option" name="thrid_craft_option" type="hidden" class="form-control"
-                   :value="itemData.thrid_craft_option">
+            <input id="thrid_craft_slot" name="third_craft_slot" type="hidden" class="form-control" value="1">
+            <input id="third_craft_option" name="third_craft_slot" type="hidden" class="form-control"
+                   :value="itemData.third_craft_option">
         </div>
 
         <div class="mb-3" v-if="itemData.count_slots > 2">

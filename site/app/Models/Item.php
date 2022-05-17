@@ -9,13 +9,13 @@ class Item
     public string $id;
     public string $lvl;
     public string $bound;
-    public string $postbound_bytes;
+    public string $post_bound_bytes;
     public string $first_craft_slot;
     public string $first_craft_option;
     public string $two_craft_slot;
     public string $two_craft_option;
-    public string $thrid_craft_slot;
-    public string $thrid_craft_option;
+    public string $third_craft_slot;
+    public string $third_craft_option;
     public string $count_slots;
     public string $four_craft_option;
     public string $position;
@@ -42,13 +42,13 @@ class Item
         $this->id = substr($item, 0, 2) . '0'. substr($item, 3, 1);
         $this->lvl = substr($item, 2, 1);
         $this->bound = substr($item, 4, 2);
-        $this->postbound_bytes = substr($item, 6, 6);
+        $this->post_bound_bytes = substr($item, 6, 6);
         $this->first_craft_slot = substr($item, 12, 1);
         $this->first_craft_option = substr($item, 13, 1);
         $this->two_craft_slot = substr($item, 14, 1);
         $this->two_craft_option = substr($item, 15, 1);
-        $this->thrid_craft_slot = substr($item, 16, 1);
-        $this->thrid_craft_option = substr($item, 17, 1);
+        $this->third_craft_slot = substr($item, 16, 1);
+        $this->third_craft_option = substr($item, 17, 1);
         $this->count_slots = substr($item, 18, 1);
         $this->four_craft_option = substr($item, 19, 1);
         $this->position = substr($item, 20, 8);
@@ -85,13 +85,13 @@ class Item
         return implode('', [
             $this->structuredId(),
             $this->bound,
-            $this->postbound_bytes,
+            $this->post_bound_bytes,
             $this->first_craft_slot,
             $this->first_craft_option,
             $this->two_craft_slot,
             $this->two_craft_option,
-            $this->thrid_craft_slot,
-            $this->thrid_craft_option,
+            $this->third_craft_slot,
+            $this->third_craft_option,
             $this->count_slots,
             $this->four_craft_option,
             $this->position,
@@ -111,8 +111,8 @@ class Item
             $this->first_craft_option,
             $this->two_craft_slot,
             $this->two_craft_option,
-            $this->thrid_craft_slot,
-            $this->thrid_craft_option,
+            $this->third_craft_slot,
+            $this->third_craft_option,
             $this->count_slots,
             $this->four_craft_option,
         ]);

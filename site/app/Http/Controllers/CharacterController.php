@@ -16,7 +16,7 @@ class CharacterController extends Controller
         $closedClots = [];
 
         foreach ($character->inventory->Data as $item) {
-            $closedClots = array_merge($closedClots, $item->closed_positions);
+            $closedClots = array_replace($closedClots, $item->closed_positions);
         }
 
         return view('character.index', compact('character', 'closedClots'));

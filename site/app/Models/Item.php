@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use App\Models\Dictionaries\ItemSlotsDictionary;
-use Stringable;
 
-class Item implements Stringable
+class Item
 {
     public string $id;
     public string $lvl;
@@ -65,34 +64,15 @@ class Item implements Stringable
     public function getClosedPositions($position)
     {
         $closedPositions = ItemSlotsDictionary::getValueData($this->dec_id);
+        $color = sprintf('#%02X%02X%02X', rand(128, 255), rand(128, 255), rand(128, 255));
         $positions = [];
 
         if (is_array($closedPositions)) {
-            if ($closedPositions['pos'] == "V") {
-                if ($closedPositions['slots'] == 8) {
-                    $positions[] = $position + 1;
+            for ($i = 0; $i < $closedPositions['x']; $i++) {
+                for ($j = 0; $j < $closedPositions['y']; $j++) {
+                    $positionTemp = ($position + $i) + ($j * 8);
 
-                    $positions[] = $position + 8;
-                    $positions[] = $position + 9;
-
-                    $positions[] = $position + 16;
-                    $positions[] = $position + 17;
-
-                    $positions[] = $position + 24;
-                    $positions[] = $position + 25;
-                }
-            }
-            if ($closedPositions['pos'] == "Q") {
-                if ($closedPositions['slots'] == 4) {
-                    $positions[] = $position + 1;
-
-                    $positions[] = $position + 8;
-                    $positions[] = $position + 9;
-                }
-            }
-            if ($closedPositions['pos'] == "H") {
-                if ($closedPositions['slots'] == 2) {
-                    $positions[] = $position + 1;
+                    $positions[$positionTemp] = $color;
                 }
             }
         }

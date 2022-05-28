@@ -251,5 +251,11 @@
 247	13	30	22	11	11	12000	1	<null>	<null>	<null>	0	0	0	0	0	0
 248	13	40	24	11	11	12000	1	<null>	<null>	<null>	0	0	0	0	0	0
 249	13	38	14	11	11	12000	1	<null>	<null>	<null>	0	0	0	0	0	0
+250	1709	91	148	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+251	1699	163	122	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+252	1713	98	22	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+253	1702	143	159	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+254	1708	104	214	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+255	1705	215	157	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
 
 [MissionMMAP]	QDungeonIdx	MMapidx	Cells

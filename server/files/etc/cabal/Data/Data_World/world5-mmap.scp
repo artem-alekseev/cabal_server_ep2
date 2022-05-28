@@ -248,5 +248,8 @@
 244	328	191	131	11	11	16000	1	<null>	<null>	<null>	0	0	0	0	0	0
 245	328	212	126	11	11	16000	1	<null>	<null>	<null>	0	0	0	0	0	0
 246	328	224	119	11	11	16000	1	<null>	<null>	<null>	0	0	0	0	0	0
+247	1726	189	17	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+248	1725	91	134	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+249	1724	138	60	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
 
 [MissionMMAP]	QDungeonIdx	MMapidx	Cells

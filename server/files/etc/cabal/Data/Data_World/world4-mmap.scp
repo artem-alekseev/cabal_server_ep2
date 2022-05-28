@@ -232,5 +232,10 @@
 228	145	234	19	11	11	9000	1	<null>	<null>	<null>	0	0	0	0	0	0
 229	145	222	17	11	11	9000	1	<null>	<null>	<null>	0	0	0	0	0	0
 230	145	205	18	11	11	9000	1	<null>	<null>	<null>	0	0	0	0	0	0
+231	1723	220	18	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+232	1722	161	57	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+233	1721	179	142	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+234	1719	27	130	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
+325	1720	230	217	11	11	60000	1	<null>	<null>	<null>	0	0	0	0	0	0
 
 [MissionMMAP]	QDungeonIdx	MMapidx	Cells

@@ -5,7 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card  text-center">
-                    <h3 class="card-header">Account : {{ $user->ID }}</h3>
+                    <h3 class="card-header">
+                        Account : {{ $user->ID }}
+                        <a class="btn btn-outline-primary float-end" href="{{ route('user.edit', $user) }}">Premium</a>
+                    </h3>
 
                     <div class="card-body">
                         <p>Online - {{ $user->Login ? 'Yes' : "No" }}</p>
@@ -36,7 +39,9 @@
                                         <td>{{ $character->Alz }}</td>
                                         <td>{{ $character->Nation }}</td>
                                         <td>{{ $character->CreateDate }}</td>
-                                        <td><a class="btn btn-outline-primary" href="{{ route('character.index', $character) }}">Edit</a></td>
+                                        <td>
+                                            <a class="btn btn-outline-primary" href="{{ route('character.index', $character) }}">Edit</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CharacterUpdateRequest;
 use App\Models\Character;
+use App\Models\Dictionaries\CharacterNationDictionary;
 use App\Models\Dictionaries\ItemDictionary;
 use App\Models\Item;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CharacterController extends Controller
 {
-    public function index(Character $character)
+    public function index(Character $character): View
     {
         $character->load('inventory');
 
@@ -22,7 +26,21 @@ class CharacterController extends Controller
         return view('character.index', compact('character', 'closedClots'));
     }
 
-    public function editItem(Character $character, $position)
+    public function edit(Character $character): View
+    {
+        $characterNations = CharacterNationDictionary::getDictionary();
+
+        return view('character.edit', compact('character', 'characterNations'));
+    }
+
+    public function update(Character $character, CharacterUpdateRequest $request): RedirectResponse
+    {
+        $character->update($request->validated());
+
+        return redirect('character.index', $character);
+    }
+
+    public function editItem(Character $character, $position): View
     {
         $item = $character->inventory->Data->firstWhere('dec_position', '=', $position);
 
@@ -35,7 +53,7 @@ class CharacterController extends Controller
         return view('character.inventory.edit', compact('item', 'character', 'items'));
     }
 
-    public function saveItem(Character $character, $position, Request $request)
+    public function saveItem(Character $character, $position, Request $request): RedirectResponse
     {
         $item = $character->inventory->Data->firstWhere('dec_position', '=', $position) ?? new Item($position);
 

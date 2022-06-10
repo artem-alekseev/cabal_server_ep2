@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +44,11 @@ class User extends Authenticatable
         return Attribute::make(
             set: fn ($value) => DB::selectOne("select dbo.fn_md5('$value') as password")->password,
         );
+    }
+
+    public function premium(): HasOne
+    {
+        return $this->hasOne(Premium::class, 'UserNum', 'UserNum');
     }
 
     public function characters(): BelongsToMany

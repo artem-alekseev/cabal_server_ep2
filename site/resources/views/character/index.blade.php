@@ -7,7 +7,10 @@
                 <div class="card text-center">
                     <h3 class="card-header">
                         View character : {{ $character->Name }}
-                        <a class="btn btn-outline-primary float-end" href="{{ route('home') }}">Back</a>
+                        <div class="btn-group float-end" role="group">
+                            <a class="btn btn-outline-success" href="{{ route('character.edit', $character) }}">Edit</a>
+                            <a class="btn btn-outline-primary" href="{{ route('home') }}">Back</a>
+                        </div>
                     </h3>
 
                     <div class="card-body">

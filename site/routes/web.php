@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +16,12 @@ use App\Http\Controllers\CharacterController;
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
+    Route::get('/', [UserController::class, 'index'])->middleware(['auth'])->name('home');
+    Route::get('user/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('user/{user}/update', [UserController::class, 'update'])->name('user.update');
     Route::get('/character/{character}', [CharacterController::class, 'index'])->name('character.index');
+    Route::get('/character/{character}/edit', [CharacterController::class, 'edit'])->name('character.edit');
+    Route::post('/character/{character}/update', [CharacterController::class, 'update'])->name('character.update');
     Route::get('/character/{character}/inventory/{position}/edit', [CharacterController::class, 'editItem'])->name('item.edit');
     Route::post('/character/{character}/inventory/{position}/save', [CharacterController::class, 'saveItem'])->name('item.save');
 });

@@ -77,3 +77,9 @@ docker-compose down server
 ```cmd
 server/logs
 ```
+
+### GM panel/Register Account http://localhost
+```cmd
+docker-compose up -d --build site nginx
+docker-compose exec site composer install
+```

@@ -19,6 +19,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [UserController::class, 'index'])->middleware(['auth'])->name('home');
     Route::get('user/{user}', [UserController::class, 'edit'])->name('user.edit');
     Route::post('user/{user}/update', [UserController::class, 'update'])->name('user.update');
+    Route::get('user/{user}/add-item', [UserController::class, 'addItem'])->name('user.add_item');
+    Route::post('user/{user}/send-item',  [UserController::class, 'sendItem'])->name('user.send_item');
     Route::get('/character/{character}', [CharacterController::class, 'index'])->name('character.index');
     Route::get('/character/{character}/edit', [CharacterController::class, 'edit'])->name('character.edit');
     Route::post('/character/{character}/update', [CharacterController::class, 'update'])->name('character.update');

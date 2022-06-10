@@ -7,7 +7,10 @@
                 <div class="card  text-center">
                     <h3 class="card-header">
                         Account : {{ $user->ID }}
-                        <a class="btn btn-outline-primary float-end" href="{{ route('user.edit', $user) }}">Premium</a>
+                        <div class="btn-group float-end" role="group">
+                            <a class="btn btn-outline-primary" href="{{ route('user.add_item', $user) }}">Give Item</a>
+                            <a class="btn btn-outline-primary" href="{{ route('user.edit', $user) }}">Premium</a>
+                        </div>
                     </h3>
 
                     <div class="card-body">

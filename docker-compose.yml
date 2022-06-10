@@ -42,3 +42,35 @@ services:
       - 38181:38181
       - 38180:38180
       - 38111-38120:38111-38120
+
+  site:
+    build:
+      context: ./site
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=mssql
+      - DB_CONNECTION=account
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - DB_ACCOUNT_DATABASE=account
+      - DB_GAMEDB_DATABASE=gamedb
+      - DB_USERNAME=sa
+      - APP_NAME="CABAL EP2 GM PANEL"
+      - APP_KEY=base64:zCa+42BpJX1LCXXXN5I3dPfBEIrvrVnwL9CJwsvSO1w=
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./site:/var/www
+    depends_on:
+      - mssql
+
+  nginx:
+    image: nginx:1.17-alpine
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./site:/var/www
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - site

@@ -81,5 +81,6 @@ server/logs
 ### GM panel/Register Account http://localhost
 ```cmd
 docker-compose up -d --build site nginx
-docker-compose exec site composer install
+docker-compose exec site composer install --no-cache
+docker-compose exec site php artisan migrate --force
 ```

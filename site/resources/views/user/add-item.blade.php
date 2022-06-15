@@ -13,6 +13,10 @@
                         <form action="{{ route('user.send_item', $user) }}" method="POST">
                             @csrf
                             <div class="mb-3">
+                                <label>User</label>
+                                <user-num-select :users="{{ json_encode($users) }}" :value="{{ old('UserNum') }}"></user-num-select>
+                            </div>
+                            <div class="mb-3">
                                 <label>Item ID</label>
                                 <input class="form-control" name="ItemKindIdx" value="{{ old('ItemKindIdx') }}">
                             </div>
@@ -34,3 +38,9 @@
         </div>
     </div>
 @endsection
+<script>
+    import UserNumSelect from "../../js/components/UserNumSelect";
+    export default {
+        components: {UserNumSelect}
+    }
+</script>

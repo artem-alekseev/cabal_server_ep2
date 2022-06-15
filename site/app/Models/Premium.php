@@ -19,7 +19,10 @@ class Premium extends Model
     public $timestamps = false;
 
     public $fillable = [
-        'ExpireDate'
+        'ExpireDate',
+        'Type',
+        'PayMinutes',
+        'ServiceKind',
     ];
 
     public $casts = [

@@ -40,13 +40,15 @@ class UserController extends Controller
 
     public function addItem(User $user): View
     {
-        return view('user.add-item', compact('user'));
+        $users = User::pluck('ID', 'UserNum');
+
+        return view('user.add-item', compact('user', 'users'));
     }
 
     public function sendItem(User $user, Request $request): RedirectResponse
     {
         CashItem::create([
-            'UserNum' => $user->UserNum,
+            'UserNum' => $request->get('UserNum') ? $request->get('UserNum') : $user->UserNum,
             'TranNo' => 1,
             'ServerIdx' => 25,
             'DurationIdx' => 31,

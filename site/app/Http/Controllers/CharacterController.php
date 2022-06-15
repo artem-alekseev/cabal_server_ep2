@@ -37,7 +37,7 @@ class CharacterController extends Controller
     {
         $character->update($request->validated());
 
-        return redirect('character.index', $character);
+        return redirect('character.index', $character->CharacterIdx);
     }
 
     public function editItem(Character $character, $position): View

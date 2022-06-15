@@ -56,6 +56,7 @@ services:
       - DB_GAMEDB_DATABASE=gamedb
       - DB_CABALCASH_DATABASE=cabalcash
       - DB_USERNAME=sa
+      - APP_ENV=local
       - APP_DEBUG=true
       - APP_NAME="CABAL EP2 GM PANEL"
       - APP_KEY=base64:zCa+42BpJX1LCXXXN5I3dPfBEIrvrVnwL9CJwsvSO1w=

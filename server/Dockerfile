@@ -2,7 +2,7 @@ FROM bdobyns/centos4.6_i386
 
 ENV container docker
 
-COPY Packages.zip /home/package
+COPY Packages.zip /home/package/
 WORKDIR /home/package
 
 RUN unzip Packages.zip
@@ -20,6 +20,8 @@ RUN rpm -i -vv --noscripts cabal-chnserverCB-1.0-2.rpm
 COPY files/etc /etc
 COPY files/usr /usr
 COPY files/home/cabal /home/cabal
+
+WORKDIR /home/package/cabal
 
 ENTRYPOINT ["linux32"]
 CMD ["/bin/bash"]

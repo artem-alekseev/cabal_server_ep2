@@ -28,7 +28,7 @@ class UserController extends Controller
     public function update(User $user, UserUpdateRequest $request): RedirectResponse
     {
         $data = $request->validated() + [
-                'Type' => 5,
+                'Type' => 1,
                 'PayMinutes' => 99999,
                 'ServiceKind' => 1
         ];

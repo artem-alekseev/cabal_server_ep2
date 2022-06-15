@@ -18,6 +18,16 @@ class Character extends Model
 
     public $timestamps = false;
 
+    public $fillable = [
+        'Name',
+        'LEV',
+        'STR',
+        'DEX',
+        'INT',
+        'Alz',
+        'Nation',
+    ];
+
     public function inventory(): HasOne
     {
         return $this->hasOne(Inventory::class, 'CharacterIdx', 'CharacterIdx');

@@ -6,7 +6,9 @@ use App\Http\Requests\CharacterUpdateRequest;
 use App\Models\Character;
 use App\Models\Dictionaries\CharacterNationDictionary;
 use App\Models\Dictionaries\ItemDictionary;
+use App\Models\Dictionaries\SkillDictionary;
 use App\Models\Item;
+use App\Models\Skill;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -66,5 +68,33 @@ class CharacterController extends Controller
         $character->inventory->save();
 
         return redirect()->route('character.index', $character);
+    }
+
+    public function editSkill(Character $character): View
+    {
+        $character->load( 'skillList');
+
+        $skillDictionary = SkillDictionary::getDictionary();
+
+        return view('character.skill-list.index', compact('character', 'skillDictionary'));
+    }
+
+    public function saveSkill(Character $character, Request $request): RedirectResponse
+    {
+        $position = $request->get('position');
+        $skill_id = $request->get('skill_id')[$request->get('position')];
+
+        $item = $character->skillList->Data->firstWhere('dec_position', '=', $position) ?? new Skill($position);
+
+        $skill_id = bin2hex(pack('n', $skill_id));
+        $item->id = substr($skill_id, 2, 2) . substr($skill_id, 0, 2);
+
+        if (!$item->exist) {
+            $character->skillList->Data->push($item);
+        }
+
+        $character->skillList->save();
+
+        return redirect()->route('skill.edit', $character);
     }
 }

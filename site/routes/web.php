@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/character/{character}/update', [CharacterController::class, 'update'])->name('character.update');
     Route::get('/character/{character}/inventory/{position}/edit', [CharacterController::class, 'editItem'])->name('item.edit');
     Route::post('/character/{character}/inventory/{position}/save', [CharacterController::class, 'saveItem'])->name('item.save');
+    Route::get('/character/{character}/skill/edit', [CharacterController::class, 'editSkill'])->name('skill.edit');
+    Route::post('/character/{character}/skill/save', [CharacterController::class, 'saveSkill'])->name('skill.save');
 });
 
 

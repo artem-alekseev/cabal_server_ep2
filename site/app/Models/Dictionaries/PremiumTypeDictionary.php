@@ -6,7 +6,7 @@ use Dictionaries\Dictionary;
 
 class PremiumTypeDictionary extends Dictionary
 {
-    const IRON = 0;
+    const FREE = 0;
     const BRONZE = 1;
     const SILVER = 2;
     const GOLD = 3;
@@ -19,7 +19,7 @@ class PremiumTypeDictionary extends Dictionary
     public static function getDictionary(): array
     {
         return [
-            self::IRON =>  'Premium Service Iron',
+            self::FREE =>  'FREE',
             self::BRONZE => 'Premium Service Bronze',
             self::SILVER => 'Premium Service Silver',
             self::GOLD => 'Premium Service Gold',

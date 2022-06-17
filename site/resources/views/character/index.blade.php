@@ -9,6 +9,7 @@
                         View character : {{ $character->Name }}
                         <div class="btn-group float-end" role="group">
                             <a class="btn btn-outline-success" href="{{ route('character.edit', $character) }}">Edit</a>
+                            <a class="btn btn-outline-info" href="{{ route('skill.edit', $character) }}">Edit Skills</a>
                             <a class="btn btn-outline-primary" href="{{ route('home') }}">Back</a>
                         </div>
                     </h3>

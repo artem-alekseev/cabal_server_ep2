@@ -13,6 +13,13 @@
                         <form action="{{ route('user.update', $user) }}" method="POST">
                             @csrf
                             <div class="mb-3">
+                                <select name="ServiceKind" class="form-control">
+                                    @foreach($premiumTypes as $key => $name)
+                                        <option @if($user->premium->ServiceKind == $key) selected @endif value="{{ $key }}">{{ $name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label>Expire Premium Date</label>
                                 <input type="date" class="form-control" name="ExpireDate" value="{{ old('ExpireDate') ?? $user->premium?->ExpireDate->format('Y-m-d') }}">
                             </div>

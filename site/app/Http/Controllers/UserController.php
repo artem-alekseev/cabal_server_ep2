@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\CashItem;
+use App\Models\Dictionaries\PremiumTypeDictionary;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -22,7 +23,9 @@ class UserController extends Controller
     {
         $user->load('premium');
 
-        return view('user.edit', compact('user'));
+        $premiumTypes = PremiumTypeDictionary::getDictionary();
+
+        return view('user.edit', compact('user', 'premiumTypes'));
     }
 
     public function update(User $user, UserUpdateRequest $request): RedirectResponse
@@ -30,7 +33,6 @@ class UserController extends Controller
         $data = $request->validated() + [
                 'Type' => 1,
                 'PayMinutes' => 99999,
-                'ServiceKind' => 1
         ];
 
         $user->premium()->updateOrCreate(['UserNum' => $user->UserNum], $data);

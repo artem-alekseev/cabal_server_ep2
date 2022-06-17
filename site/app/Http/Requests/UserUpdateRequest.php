@@ -24,7 +24,8 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'ExpireDate' => 'required|date'
+            'ExpireDate' => 'required|date',
+            'ServiceKind' => 'required',
         ];
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
 @section('content')
     <div class="container">
@@ -15,7 +15,7 @@
                             <div class="mb-3">
                                 <select name="ServiceKind" class="form-control">
                                     @foreach($premiumTypes as $key => $name)
-                                        <option @if($user->premium->ServiceKind == $key) selected @endif value="{{ $key }}">{{ $name }}</option>
+                                        <option @if($user->premium?->ServiceKind == $key) selected @endif value="{{ $key }}">{{ $name }}</option>
                                     @endforeach
                                 </select>
                             </div>

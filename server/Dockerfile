@@ -21,6 +21,9 @@ COPY files/etc /etc
 COPY files/usr /usr
 COPY files/home/cabal /home/cabal
 
+RUN find /etc/cabal -type f | xargs dos2unix
+RUN find /home/cabal -type f | xargs dos2unix
+
 WORKDIR /home/package/cabal
 
 ENTRYPOINT ["linux32"]

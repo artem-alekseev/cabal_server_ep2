@@ -1,0 +1,221 @@
+html { min-height: 100%; margin-bottom: 1px; }
+body {
+
+	background:#000000 url("images/bg.jpg") top center no-repeat;
+	scrollbar-face-color:#000000;
+	scrollbar-highlight-color:#818181;
+	scrollbar-3dlight-color:#000000;
+	scrollbar-shadow-color:#818181;
+	scrollbar-darkshadow-color: 000000;
+	scrollbar-track-color: #000000;
+	scrollbar-arrow-color:#818181;}
+	
+body, table, td, tr, div {	
+  	font-family:  Verdana, Arial, Helvetica, sans-serif, Impact;
+  	color:#fefefe;
+  	font-size:9pt;
+  	text-decoration:none;
+  	line-height:18px;
+}
+		
+  	a:link,a:visited{text-decoration:none} 
+  	img		{ border:0px }
+  	body	{ font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px; color : #828282 ; }  	  	
+  	td		{ font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px; }  
+  	th		{ font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px; } 
+
+	A:active	{color:white;  text-decoration: none; }
+	A:hover		{color:white; text-decoration: none; }
+	A:visited   {color:white; text-decoration: none; }
+	A:link		{color:white; text-decoration: none; }
+
+.editbox {
+  padding:2px;
+  background:transparent;
+  color: #efefef;
+  font-weight:bold;
+  border-width:1px;
+  border-top-color:#555555;	
+  border-left-color:#555555;
+  border-right-color:#FFFFFF;	
+  border-bottom-color:#FFFFFF;
+}
+
+.button {
+  background:transparent;
+  color: #efefef;
+  font-weight:bold;
+  border-width:1px;
+  border-top-color:#FFFFFF;	
+  border-left-color:#FFFFFF;
+  border-right-color:#55555;	
+  border-bottom-color:#55555;
+}
+
+.errortext {
+  color: #ff5555; font-family: verdana; font-size: 14px; font-weight:bold;
+}
+
+.goodtext {
+  color: #55ff55; font-family: verdana; font-size: 14px; font-weight:bold;
+}
+
+	/* gray */
+	.gray		{ color : #A8A8A8 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.gray a:link	{ color : #A8A8A8 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.gray a:active	{ color : #A8A8A8 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.gray a:visited	{ color : #A8A8A8 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.gray a:hover	{ color : #A8A8A8 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* red */
+	.red		{ color : #FF0000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.red a:link		{ color : #FF0000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.red a:active	{ color : #FF0000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.red a:visited	{ color : #FF0000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.red a:hover	{ color : #FF0000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* dark */
+	.dark		{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.dark a:link	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.dark a:active	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.dark a:visited	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.dark a:hover	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* mini */
+	.mini		{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 11px ; line-height:13pt; text-decoration : none }
+	.mini a:link	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 11px ; line-height:13pt; text-decoration : none }
+	.mini a:active	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 11px ; line-height:13pt; text-decoration : none }
+	.mini a:visited	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 11px ; line-height:13pt; text-decoration : none }
+	.mini a:hover	{ color : #828282 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 11px ; line-height:13pt; text-decoration : none }
+	
+	/* black */
+	.black				{ color : #000000; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.black a:link		{ color : #000000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.black a:active		{ color : #000000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.black a:visited	{ color : #000000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.black a:hover		{ color : #000000 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* white */
+	.white		{ color : #FFFFFF; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.white a:link	{ color : #FFFFFF ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.white a:active	{ color : #FFFFFF ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.white a:visited	{ color : #FFFFFF ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.white a:hover	{ color : #FFFFFF ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* orange */
+	.orange				{ color : #F37607; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.orange a:link		{ color : #F37607 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.orange a:active	{ color : #F37607 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.orange a:visited	{ color : #F37607 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.orange a:hover		{ color : #F37607 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* beige */
+	.beige				{ color : #8A7F6B; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.beige a:link		{ color : #8A7F6B ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.beige a:active		{ color : #8A7F6B ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.beige a:visited	{ color : #8A7F6B ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.beige a:hover		{ color : #8A7F6B ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+		
+	/* PubBoard */
+	input.black			{ font-size : 12px ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; BACKGROUND:#252525; BORDER-RIGHT: #686767 1px solid; BORDER-TOP: #686767 1px solid; BORDER-LEFT: #686767 1px solid; BORDER-BOTTOM: #686767 1px solid; color:#cccccc; }
+	input.white			{ font-size : 12px ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; color:#000000;}
+	input.orange		{ font-size : 12px ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; BACKGROUND:#252525; BORDER-RIGHT: #686767 1px solid; BORDER-TOP: #686767 1px solid; BORDER-LEFT: #686767 1px solid; BORDER-BOTTOM: #686767 1px solid; color:#F37607; }
+	textarea.black		{ font-size : 12px ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; BACKGROUND:#111111; BORDER-RIGHT: #686767 1px solid; BORDER-TOP: #686767 1px solid; BORDER-LEFT: #686767 1px solid; BORDER-BOTTOM: #686767 1px solid; color:#cccccc; }
+	select.black		{ font-size : 12px ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; BACKGROUND:#252525; BORDER-RIGHT: #686767 1px solid; BORDER-TOP: #686767 1px solid; BORDER-LEFT: #686767 1px solid; BORDER-BOTTOM: #686767 1px solid; color:#cccccc; }
+	
+	/* white */
+	.FocusWhite			{ color : #FFFFFF; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	.FocusWhite a:hover	{ color : #FFFFFF; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:13pt; text-decoration : none }
+	
+	/* taho */
+	.taho		{ color : #707070 ; Font-Family: tahoma ; Font-Size: 11px ; line-height:12pt; text-decoration : none }
+	.taho a:link	{ color : #707070 ; Font-Family: tahoma ; Font-Size: 11px ; line-height:12pt; text-decoration : none }
+	.taho a:active	{ color : #707070 ; Font-Family: tahoma ; Font-Size: 11px ; line-height:12pt; text-decoration : none }
+	.taho a:visited	{ color : #707070 ; Font-Family: tahoma ; Font-Size: 11px ; line-height:12pt; text-decoration : none }
+	.taho a:hover	{ color : #707070 ; Font-Family: tahoma ; Font-Size: 11px ; line-height:12pt; text-decoration : none }	
+	
+	/* blue */
+	.blue		{ color : #0000ff ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.blue a:link	{ color : #0000ff ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.blue a:active	{ color : #0000ff ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.blue a:visited	{ color : #0000ff ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.blue a:hover	{ color : #0000ff ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* teal */
+	.teal		{ color : #2f8c89 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.teal a:link	{ color : #2f8c89 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.teal a:active	{ color : #2f8c89 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.teal a:visited	{ color : #2f8c89 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.teal a:hover	{ color : #2f8c89 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* olive */
+	.olive		{ color : #827a00 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.olive a:link	{ color : #827a00 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.olive a:active	{ color : #827a00 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.olive a:visited	{ color : #827a00 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.olive a:hover	{ color : #827a00 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* cloud */
+	.cloud		{ color : #346c95 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud a:link	{ color : #346c95 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud a:active	{ color : #346c95 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud a:visited	{ color : #346c95 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud a:hover	{ color : #346c95 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* cloud2 */
+	.cloud2		{ color : #669cc3 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud2 a:link	{ color : #669cc3 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud2 a:active	{ color : #669cc3 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud2 a:visited	{ color : #669cc3 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.cloud2 a:hover	{ color : #669cc3 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* brown */
+	.brown		{ color : #7f6144 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.brown a:link	{ color : #7f6144 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.brown a:active	{ color : #7f6144 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.brown a:visited	{ color : #7f6144 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.brown a:hover	{ color : #7f6144 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* choco */
+	.choco		{ color : #6a5b4d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.choco a:link	{ color : #6a5b4d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.choco a:active	{ color : #6a5b4d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.choco a:visited	{ color : #6a5b4d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.choco a:hover	{ color : #6a5b4d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* grass */
+	.grass		{ color : #598527 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.grass a:link	{ color : #598527 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.grass a:active	{ color : #598527 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.grass a:visited	{ color : #598527 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.grass a:hover	{ color : #598527 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* jungle */
+	.jungle		{ color : #005825 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.jungle a:link	{ color : #005825 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.jungle a:active	{ color : #005825 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.jungle a:visited	{ color : #005825 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.jungle a:hover	{ color : #005825 ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	
+	/* violet */
+	.violet		{ color : #9e005d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.violet a:link	{ color : #9e005d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.violet a:active	{ color : #9e005d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.violet a:visited	{ color : #9e005d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.violet a:hover	{ color : #9e005d ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* pink */
+	.pink		{ color : #ec008c ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.pink a:link	{ color : #ec008c ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.pink a:active	{ color : #ec008c ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.pink a:visited	{ color : #ec008c ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.pink a:hover	{ color : #ec008c ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	
+	/* navy */
+	.navy		{ color : #354ebd ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.navy a:link	{ color : #354ebd ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.navy a:active	{ color : #354ebd ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.navy a:visited	{ color : #354ebd ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }
+	.navy a:hover	{ color : #354ebd ; font-family:  Verdana, Arial, Helvetica, sans-serif, Impact; Font-Size: 12px ; line-height:12pt; text-decoration : none }

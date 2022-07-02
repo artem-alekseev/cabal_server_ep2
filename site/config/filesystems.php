@@ -35,6 +35,11 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'cashshop' => [
+            'driver' => 'local',
+            'root' => public_path('images/cashshop/items'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

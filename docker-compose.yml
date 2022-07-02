@@ -67,35 +67,13 @@ services:
     depends_on:
       - mssql
 
-  cash_shop:
-    build:
-      context: ./cashshop
-      dockerfile: Dockerfile
-    environment:
-      - DB_USER=sa
-      - DB_HOST=mssql
-      - DB_CONNECTION=account
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_PORT=${DB_PORT}
-      - DB_ACCOUNT_DATABASE=account
-      - DB_GAMEDB_DATABASE=gamedb
-      - DB_CABALCASH_DATABASE=cabalcash
-    restart: unless-stopped
-    working_dir: /var/www/cashshop
-    volumes:
-      - ./cashshop:/var/www/cashshop
-    depends_on:
-      - mssql
-
   nginx:
     image: nginx:1.17-alpine
     restart: unless-stopped
     ports:
       - 80:80
-      - 81:81
     volumes:
       - ./site:/var/www
-      - ./cashshop:/var/www/cashshop
       - ./nginx:/etc/nginx/conf.d
     depends_on:
       - site

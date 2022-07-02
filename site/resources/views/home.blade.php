@@ -10,6 +10,8 @@
                         <div class="btn-group float-end" role="group">
                             <a class="btn btn-outline-primary" href="{{ route('user.add_item', $user) }}">Give Item</a>
                             <a class="btn btn-outline-primary" href="{{ route('user.edit', $user) }}">Premium</a>
+                            <a class="btn btn-outline-primary" href="{{ route('cashshop.index') }}">Back to CashShop</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.cashshop.list') }}">Edit CashShop</a>
                         </div>
                     </h3>
 

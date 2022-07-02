@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -41,5 +43,18 @@ class LoginController extends Controller
     public function username()
     {
         return 'ID';
+    }
+
+    public function apiAuth(Request $request)
+    {
+        $user = User::where(['UserNum' => $request->get('v1'), 'AuthKey' => $request->get('v2')])->first();
+
+        if($user) {
+            auth()->login($user);
+
+            return redirect()->route('cashshop.index');
+        }
+
+        return redirect()->route('cashshop.login');
     }
 }

@@ -34,6 +34,10 @@ class User extends Authenticatable
         'Login',
     ];
 
+    public $casts = [
+        'CreateDate' => 'date'
+    ];
+
     public function getAuthPassword()
     {
         return $this->Password;
@@ -46,6 +50,13 @@ class User extends Authenticatable
         );
     }
 
+    protected function isAdmin(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this->characters()->where('Nation', 3)->exists(),
+        );
+    }
+
     public function premium(): HasOne
     {
         return $this->hasOne(Premium::class, 'UserNum', 'UserNum');
@@ -54,5 +65,15 @@ class User extends Authenticatable
     public function characters(): BelongsToMany
     {
         return $this->belongsToMany(Character::class, 'account.dbo.user_characters', 'UserNum', 'CharacterIdx');
+    }
+
+    public function bank(): HasOne
+    {
+        return $this->hasOne(Bank::class, 'UserNum', 'UserNum');
+    }
+
+    public function warehouse(): HasOne
+    {
+        return $this->hasOne(Warehouse::class, 'UserNum', 'UserNum');
     }
 }

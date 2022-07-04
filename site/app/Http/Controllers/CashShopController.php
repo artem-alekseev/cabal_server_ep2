@@ -29,22 +29,26 @@ class CashShopController extends Controller
 
     public function index(): View
     {
-        $user = auth()->user()->load(['bank', 'warehouse']);
+        $user = auth()->user();
 
         if (!$user->bank) {
             $user->bank()->create();
         }
+
+        $user = $user->load(['bank', 'warehouse']);
 
         return view('cashshop.index', compact('user'));
     }
 
     public function view(Request $request): View
     {
-        $user = auth()->user()->load(['bank']);
+        $user = auth()->user();
 
         if (!$user->bank) {
             $user->bank()->create();
         }
+
+        $user = $user->load(['bank', 'warehouse']);
 
         $cashShopCategories = CashShopCategoriesDictionary::getDictionary();
         $shopItems = ShopItem::where(['Category' => $request->get('tab', 1),])

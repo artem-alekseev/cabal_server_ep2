@@ -33,8 +33,48 @@
                                 <input class="form-control" name="INT" value="{{ old('INT') ?? $character->INT }}">
                             </div>
                             <div class="mb-3">
+                                <label>PNT</label>
+                                <input class="form-control" name="PNT" value="{{ old('PNT') ?? $character->PNT }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>Rank</label>
+                                <input class="form-control" name="Rank" value="{{ old('Rank') ?? $character->Rank }}">
+                            </div>
+                            <div class="mb-3">
                                 <label>Alz</label>
                                 <input class="form-control" name="Alz" value="{{ old('Alz') ?? $character->Alz }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>Style</label>
+                                <input class="form-control" name="Style" value="{{ old('Style') ?? $character->Style }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>SwdPNT</label>
+                                <input class="form-control" name="SwdPNT" value="{{ old('SwdPNT') ?? $character->SwdPNT }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>MagPNT</label>
+                                <input class="form-control" name="MagPNT" value="{{ old('MagPNT') ?? $character->MagPNT }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>RankEXP</label>
+                                <input class="form-control" name="RankEXP" value="{{ old('RankEXP') ?? $character->RankEXP }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>WarpBField</label>
+                                <input class="form-control" name="WarpBField" value="{{ old('WarpBField') ?? $character->WarpBField }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>MapsBField</label>
+                                <input class="form-control" name="MapsBField" value="{{ old('MapsBField') ?? $character->MapsBField }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>SP</label>
+                                <input class="form-control" name="SP" value="{{ old('SP') ?? $character->SP }}">
+                            </div>
+                            <div class="mb-3">
+                                <label>Reputation</label>
+                                <input class="form-control" name="Reputation" value="{{ old('Reputation') ?? $character->Reputation }}">
                             </div>
                             <div class="mb-3">
                                 <label>Nation</label>

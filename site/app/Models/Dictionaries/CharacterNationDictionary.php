@@ -7,8 +7,8 @@ use Dictionaries\Dictionary;
 class CharacterNationDictionary extends Dictionary
 {
     const NONE = 0;
-    const PROCYON = 1;
-    const CAPELLA = 2;
+    const CAPELLA = 1;
+    const PROCYON = 2;
     const GM = 3;
     /**
      * @inheritDoc
@@ -17,8 +17,8 @@ class CharacterNationDictionary extends Dictionary
     {
         return [
             self::NONE => 'None',
-            self::PROCYON => "Procyon",
             self::CAPELLA => "Capella",
+            self::PROCYON => "Procyon",
             self::GM => "GM",
         ];
     }

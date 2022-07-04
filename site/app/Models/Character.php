@@ -24,7 +24,17 @@ class Character extends Model
         'STR',
         'DEX',
         'INT',
+        'PNT',
+        'Rank',
         'Alz',
+        'Style',
+        'SwdPNT',
+        'MagPNT',
+        'RankEXP',
+        'WarpBField',
+        'MapsBField',
+        'SP',
+        'Reputation',
         'Nation',
     ];
 

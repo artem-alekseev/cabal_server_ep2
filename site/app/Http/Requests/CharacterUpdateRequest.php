@@ -31,7 +31,17 @@ class CharacterUpdateRequest extends FormRequest
             'STR' => 'required|int|max:9999',
             'DEX' => 'required|int|max:9999',
             'INT' => 'required|int|max:9999',
+            'PNT' => 'required|int|max:9999',
+            'Rank' => 'required|int',
             'Alz' => 'required|int|max:999999999999',
+            'Style' => 'required|int',
+            'SwdPNT' => 'required|int',
+            'MagPNT' => 'required|int',
+            'RankEXP' => 'required|int',
+            'WarpBField' => 'required|int',
+            'MapsBField' => 'required|int',
+            'SP' => 'required|int',
+            'Reputation' => 'required|int',
             'Nation' => ['required', Rule::in(CharacterNationDictionary::getRange())],
         ];
     }

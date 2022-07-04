@@ -31,12 +31,21 @@ class CashShopController extends Controller
     {
         $user = auth()->user()->load(['bank', 'warehouse']);
 
+        if (!$user->bank) {
+            $user->bank()->create();
+        }
+
         return view('cashshop.index', compact('user'));
     }
 
     public function view(Request $request): View
     {
         $user = auth()->user()->load(['bank']);
+
+        if (!$user->bank) {
+            $user->bank()->create();
+        }
+
         $cashShopCategories = CashShopCategoriesDictionary::getDictionary();
         $shopItems = ShopItem::where(['Category' => $request->get('tab', 1),])
             ->where('Available', '>', 0)
@@ -107,6 +116,13 @@ class CashShopController extends Controller
         return view('cashshop.edit', compact('shopItem', 'cashShopCategories'));
     }
 
+    public function create(): View
+    {
+        $cashShopCategories = CashShopCategoriesDictionary::getDictionary();
+
+        return view('cashshop.create', compact('cashShopCategories'));
+    }
+
     public function update(ShopItem $shopItem, Request $request): RedirectResponse
     {
         if ($request->hasFile('Image')) {
@@ -120,6 +136,30 @@ class CashShopController extends Controller
         }
 
         $shopItem->update($request->except('Image'));
+
+        return redirect()->route('admin.cashshop.list');
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+        $shopItem = ShopItem::create($request->except('Image'));
+
+        if ($request->hasFile('Image')) {
+            $file = $request->file('Image');
+
+            $imageName = $shopItem->Id . '.' . $file->getClientOriginalExtension();
+
+            $file->storeAs('/', $imageName, 'cashshop');
+
+            $shopItem->update(['Image' => 'images/cashshop/items/' . $imageName]);
+        }
+
+        return redirect()->route('admin.cashshop.list');
+    }
+
+    public function delete(ShopItem $shopItem): RedirectResponse
+    {
+        $shopItem->delete();
 
         return redirect()->route('admin.cashshop.list');
     }

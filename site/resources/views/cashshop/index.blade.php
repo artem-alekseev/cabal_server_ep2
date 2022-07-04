@@ -130,7 +130,7 @@
                                                             <td width="120"
                                                                 style="padding-left:8px;border-bottom:#333333 1px dashed"
                                                                 class="cloud2"><strong>Warehouse Alz</strong></td>
-                                                            <td style="border-bottom:#333333 1px dashed">{{ $user->warehouse->Alz }}</td>
+                                                            <td style="border-bottom:#333333 1px dashed">{{ $user->warehouse->Alz ?? 0 }}</td>
                                                             @if (!$user->Login)
                                                                 <form method="post"
                                                                       action="{{ route('cashshop.deposit') }}">

@@ -12,12 +12,7 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::statement("
-            CREATE VIEW user_characters AS
-            SELECT cct.CharacterIdx, cat.UserNum
-            FROM gamedb.dbo.cabal_character_table AS cct
-            JOIN account.dbo.cabal_auth_table AS cat ON cct.CharacterIdx / 8 = cat.UserNum;
-        ");
+        DB::statement("ALTER TABLE CabalCash.dbo.ShopItems ALTER COLUMN [Image] varchar(200) COLLATE Chinese_PRC_CI_AS NULL;");
     }
 
     /**
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('DROP VIEW IF EXISTS user_characters');
+        DB::statement("ALTER TABLE CabalCash.dbo.ShopItems ALTER COLUMN [Image] varchar(200) COLLATE Chinese_PRC_CI_AS;");
     }
 };

@@ -52,8 +52,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::prefix('cashshop')->name('admin.cashshop.')->group(function() {
         Route::get('', [CashShopController::class, 'itemList'])->name('list');
+        Route::get('create', [CashShopController::class, 'create'])->name('create');
+        Route::post('store', [CashShopController::class, 'store'])->name('store');
         Route::get('{shopItem}/edit', [CashShopController::class, 'edit'])->name('edit');
         Route::post('{shopItem}/update', [CashShopController::class, 'update'])->name('update');
+        Route::post('{shopItem}/delete', [CashShopController::class, 'delete'])->name('delete');
     });
 });
 

@@ -83,5 +83,4 @@ server/logs
 docker-compose up -d --build site nginx
 docker-compose exec site composer install --no-cache
 docker-compose exec site php artisan migrate --force
-docker-compose exec site php artisan st:li
 ```

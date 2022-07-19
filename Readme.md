@@ -85,3 +85,12 @@ docker-compose exec site composer install --no-cache
 docker-compose exec site php artisan migrate --force
 docker-compose exec site chmod -R 777 storage
 ```
+
+### GM panel Set GM
+```cmd
+docker-compose exec site php artisan set:gm (login|ID)
+```
+#### example
+```cmd
+docker-compose exec site php artisan set:gm admin
+```

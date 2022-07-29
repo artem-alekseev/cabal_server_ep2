@@ -26,7 +26,7 @@
         <table cellspacing="4" cellpadding="0" border="0">
             <tr>
                 <td align="right">Login:</td>
-                <td><input type="text" class="editbox" name="ID" value="{{ old('ID') }}"></td>
+                <td><input type="text" class="editbox" name="id" value="{{ old('id') }}"></td>
             </tr>
             <tr>
                 <td align="right">Pass:</td>
